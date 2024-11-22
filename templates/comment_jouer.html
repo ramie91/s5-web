@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règles du Bridge - BridgeStream</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    {% include 'logo.html' %}
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  {% include 'navbar.html' %}
+
+<!-- Introduction to Bridge -->
+<section class="bg-green-600 text-white text-center py-16">
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold">Les Règles du Bridge</h1>
+        <p class="mt-4 text-lg">Découvrez les bases du bridge, un jeu de cartes stratégique et captivant.</p>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-12">
+    <div class="container mx-auto">
+        <h2 class="text-center text-3xl font-bold mb-8">Comment jouer au Bridge</h2>
+
+        <!-- Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div>
+                <h3 class="text-2xl font-semibold">Qu'est-ce que le Bridge ?</h3>
+                <p class="mt-4 text-gray-700">Le bridge est un jeu de cartes qui se joue avec 52 cartes standard et oppose deux équipes de deux joueurs. C’est un jeu qui allie stratégie, communication et logique. Le but du jeu est de marquer des points en remportant des plis et en atteignant le contrat déclaré.</p>
+            </div>
+        </div>
+
+        <!-- Phases of the Game -->
+        <h3 class="text-2xl font-semibold mb-4">Phases du Jeu</h3>
+        <ul class="space-y-6 mb-8">
+            <li class="bg-white rounded-lg shadow p-6">
+                <h5 class="font-bold text-xl">1. La Distribution des Cartes</h5>
+                <p class="mt-2 text-gray-700">Chaque joueur reçoit 13 cartes. Le jeu commence par une période d'enchères où les joueurs annoncent le nombre de plis qu'ils pensent pouvoir remporter et l'atout choisi.</p>
+            </li>
+            <li class="bg-white rounded-lg shadow p-6">
+                <h5 class="font-bold text-xl">2. Les Enchères</h5>
+                <p class="mt-2 text-gray-700">L'enchère est une phase clé du bridge. Les joueurs déclarent un contrat, qui définit le nombre de plis qu'ils s'engagent à remporter ainsi que la couleur d'atout (ou sans atout).</p>
+            </li>
+            <li class="bg-white rounded-lg shadow p-6">
+                <h5 class="font-bold text-xl">3. Le Jeu de la Carte</h5>
+                <p class="mt-2 text-gray-700">Après les enchères, le jeu de la carte commence. Le joueur situé à gauche du déclarant joue la première carte, appelée "l'entame". Le but est de remporter des plis, et le joueur du camp déclarant tente de remplir le contrat annoncé.</p>
+            </li>
+            <li class="bg-white rounded-lg shadow p-6">
+                <h5 class="font-bold text-xl">4. Le Score</h5>
+                <p class="mt-2 text-gray-700">À la fin du jeu, le score est calculé en fonction du nombre de plis remportés par l'équipe déclarante par rapport à son contrat. Des bonus et des pénalités peuvent être appliqués en fonction du succès ou de l'échec du contrat.</p>
+            </li>
+        </ul>
+
+        <!-- Basic Rules -->
+        <h3 class="text-2xl font-semibold mb-4">Règles de Base</h3>
+        <ul class="space-y-4 mb-8">
+            <li class="bg-white rounded-lg shadow p-4">Le bridge se joue à quatre joueurs répartis en deux équipes (Nord-Sud contre Est-Ouest).</li>
+            <li class="bg-white rounded-lg shadow p-4">Le jeu est divisé en deux phases principales : les enchères et le jeu de la carte.</li>
+            <li class="bg-white rounded-lg shadow p-4">L'objectif est de remporter un maximum de plis en respectant le contrat annoncé lors des enchères.</li>
+            <li class="bg-white rounded-lg shadow p-4">La carte la plus haute dans la couleur jouée remporte le pli, sauf si un atout est joué.</li>
+            <li class="bg-white rounded-lg shadow p-4">Un contrat consiste à déclarer un certain nombre de plis à gagner (au moins 6) avec ou sans une couleur d'atout.</li>
+        </ul>
+
+        <!-- Strategy Section -->
+        <h3 class="text-2xl font-semibold mb-4">Stratégie</h3>
+        <p class="mb-4 text-gray-700">Le bridge est un jeu de stratégie qui nécessite une bonne communication entre les partenaires. Quelques stratégies importantes à garder à l'esprit :</p>
+        <ul class="space-y-4 mb-8">
+            <li class="bg-white rounded-lg shadow p-4">Apprenez à bien évaluer la force de votre main lors des enchères.</li>
+            <li class="bg-white rounded-lg shadow p-4">Collaborez efficacement avec votre partenaire en utilisant des conventions d'enchères reconnues.</li>
+            <li class="bg-white rounded-lg shadow p-4">Anticipez les cartes de vos adversaires et planifiez vos plis en conséquence.</li>
+        </ul>
+    </div>
+</section>
+
+{% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table {{ table_id }} : Diffusion en Direct - BridgeStream</title>
+    {% include 'logo.html' %}
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Navbar Inclusion -->
+    {% include 'navbar.html' %}
+
+    <!-- Video Section -->
+    <section class="flex-grow py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-8">Table {{ table_id }} : Partie en direct</h2>
+            <p class="text-gray-600 mb-6">Regardez la partie en direct avec des commentaires professionnels.</p>
+
+            <!-- Video Player -->
+            <div class="max-w-2xl mx-auto">
+                <video id="video" width="640" height="360" controls class="w-full rounded-lg shadow-lg"></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Inclusion -->
+    {% include 'footer.html' %}
+
+    <!-- hls.js pour les flux M3U8 -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script>
+        if (Hls.isSupported()) {
+            var video = document.getElementById('video');
+            var hls = new Hls({
+                liveSyncDurationCount: 3,  // Nombre de segments pour rester en synchronisation
+                liveMaxLatencyDurationCount: 5  // Nombre maximal de segments pour éviter de trop décaler
+            });
+            hls.loadSource("{{ stream_url }}");
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            // Support natif HLS (Safari)
+            video.src = "{{ stream_url }}";
+            video.addEventListener('loadedmetadata', function() {
+                video.play();
+            });
+        }
+    </script>
+</body>
+</html>

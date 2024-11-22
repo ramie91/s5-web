@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table {{ table_id }} - Récapitulatif des Mouvements</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    {% include 'navbar.html' %}
+
+    <section class="flex-grow py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Récapitulatif des Mouvements pour la Table {{ table_id }}</h2>
+            
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-green-600 text-white">
+                    <tr>
+                        <th class="py-3 px-6 text-left">#</th>
+                        <th class="py-3 px-6 text-left">Joueur</th>
+                        <th class="py-3 px-6 text-left">Action</th>
+                        <th class="py-3 px-6 text-left">Résultat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for move in moves_data %}
+                    <tr class="border-b">
+                        <td class="py-4 px-6">{{ move.move_number }}</td>
+                        <td class="py-4 px-6">{{ move.player }}</td>
+                        <td class="py-4 px-6">{{ move.action }}</td>
+                        <td class="py-4 px-6">{{ move.result }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>

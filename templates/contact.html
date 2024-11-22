@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact - BridgeStream</title>
+    {% include 'logo.html' %}
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- Navbar Inclusion -->
+    {% include 'navbar.html' %}
+
+    <!-- Contact Form Section -->
+    <section class="flex-grow flex items-center justify-center py-12">
+        <div class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full">
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-6">Contactez-nous</h2>
+            <p class="text-gray-600 text-center mb-8">Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.</p>
+            <form action="#" method="POST" class="space-y-6">
+                
+                <!-- Name -->
+                <div>
+                    <label for="name" class="block text-gray-700 font-medium mb-2">Nom</label>
+                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Votre nom" required>
+                </div>
+                
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Votre email" required>
+                </div>
+                
+                <!-- Subject -->
+                <div>
+                    <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                    <input type="text" id="subject" name="subject" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Sujet de votre message" required>
+                </div>
+                
+                <!-- Message -->
+                <div>
+                    <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Votre message" required></textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition duration-300">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Inclusion -->
+    {% include 'footer.html' %}
+
+</body>
+</html>

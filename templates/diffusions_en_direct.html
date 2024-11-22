@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffusions en Direct - BridgeStream</title>
+    {% include 'logo.html' %}
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- Navbar Inclusion -->
+    {% include 'navbar.html' %}
+
+    <!-- Live Streaming Section -->
+    <section class="flex-grow py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8">Diffusions en Direct</h2>
+            <p class="text-center text-gray-600 mb-12">Choisissez une table pour regarder les parties de bridge en direct avec des joueurs professionnels et amateurs.</p>
+            
+            <!-- Tables Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for key, stream in table_streams.items() %}
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="p-4">
+                            <h5 class="font-bold text-xl">Partie de championnat {{ key }}</h5>
+                            <p class="mt-2 text-gray-600">{{ stream.description }}</p>
+                            <a href="{{ url_for('table', table_id=key) }}" class="mt-4 inline-block bg-green-600 text-white font-semibold py-2 px-4 rounded-full">Regarder</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Inclusion -->
+    {% include 'footer.html' %}
+
+</body>
+</html>

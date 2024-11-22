@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Responsive</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.2.2/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white" x-data="{ open: false }">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Brand -->
+            <a href="/" class="text-2xl font-bold">BridgeStream</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-gray-300">Accueil</a>
+                <a href="/comment-jouer" class="hover:text-gray-300">Règles du Bridge</a>
+                <a href="/direct" class="hover:text-gray-300">Diffusions en direct</a>
+                <a href="/recent" class="hover:text-gray-300">Vidéos récentes</a>
+                <a href="/contact" class="hover:text-gray-300">Contact</a>
+            </div>
+
+            <!-- Mobile Hamburger Icon -->
+            <button @click="open = !open" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-400 border-gray-600 hover:text-white hover:border-white">
+                <svg class="fill-current h-5 w-5" viewBox="0 0 20 20">
+                    <path x-show="!open" d="M0 3h20v2H0zM0 9h20v2H0zM0 15h20v2H0z" />
+                    <path x-show="open" d="M4 4l12 12M4 16L16 4" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="open" class="md:hidden bg-gray-700 text-white">
+            <a href="/" class="block px-4 py-2 hover:bg-gray-600">Accueil</a>
+            <a href="/comment-jouer" class="block px-4 py-2 hover:bg-gray-600">Règles du Bridge</a>
+            <a href="/direct" class="block px-4 py-2 hover:bg-gray-600">Diffusions en direct</a>
+            <a href="/recent" class="block px-4 py-2 hover:bg-gray-600">Vidéos récentes</a>
+            <a href="/contact" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
+        </div>
+    </nav>
+</body>
+</html>
